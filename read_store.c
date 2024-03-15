@@ -1,11 +1,16 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
+#include<unistd.h>
+
+
 
 #define ROWS 3200
 #define COLUMNS 10
 
 int main(){
+    chdir("/Users/miikka/Desktop/CPS/");
+
     float temp[ROWS][COLUMNS];
     FILE *file = fopen("GlobalTemperatures.csv", "r");
 
@@ -30,4 +35,6 @@ int main(){
             break;
         }
     }
+    printf("%lf", temp[2][4]);
+    
 }
