@@ -1,0 +1,18 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/miikka/Desktop/CPS/output/assignment'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _datenumber, symObjAddr: 0x0, symBinAddr: 0x1000033A0, symSize: 0x2C }
+  - { offsetInCU: 0x4D, offset: 0x4D, size: 0x8, addend: 0x0, symName: _FILENAME, symObjAddr: 0xB58, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x6C, offset: 0x6C, size: 0x8, addend: 0x0, symName: _DATE_COL, symObjAddr: 0xB60, symBinAddr: 0x100003F84, symSize: 0x0 }
+  - { offsetInCU: 0x8D, offset: 0x8D, size: 0x8, addend: 0x0, symName: _AVG_TEMP_COL, symObjAddr: 0xB64, symBinAddr: 0x100003F88, symSize: 0x0 }
+  - { offsetInCU: 0xA2, offset: 0xA2, size: 0x8, addend: 0x0, symName: _AVG_TEMP_UNC_COL, symObjAddr: 0xB68, symBinAddr: 0x100003F8C, symSize: 0x0 }
+  - { offsetInCU: 0xB8, offset: 0xB8, size: 0x8, addend: 0x0, symName: _datenumber, symObjAddr: 0x0, symBinAddr: 0x1000033A0, symSize: 0x2C }
+  - { offsetInCU: 0xEE, offset: 0xEE, size: 0x8, addend: 0x0, symName: _getMonth, symObjAddr: 0x2C, symBinAddr: 0x1000033CC, symSize: 0xF4 }
+  - { offsetInCU: 0x15B, offset: 0x15B, size: 0x8, addend: 0x0, symName: _getYear, symObjAddr: 0x120, symBinAddr: 0x1000034C0, symSize: 0xE0 }
+  - { offsetInCU: 0x1BA, offset: 0x1BA, size: 0x8, addend: 0x0, symName: _rowsCount, symObjAddr: 0x200, symBinAddr: 0x1000035A0, symSize: 0xE0 }
+  - { offsetInCU: 0x1FE, offset: 0x1FE, size: 0x8, addend: 0x0, symName: _getColumnValue, symObjAddr: 0x2E0, symBinAddr: 0x100003680, symSize: 0x190 }
+  - { offsetInCU: 0x2A0, offset: 0x2A0, size: 0x8, addend: 0x0, symName: _question2, symObjAddr: 0x470, symBinAddr: 0x100003810, symSize: 0x208 }
+  - { offsetInCU: 0x39B, offset: 0x39B, size: 0x8, addend: 0x0, symName: _question3, symObjAddr: 0x678, symBinAddr: 0x100003A18, symSize: 0x34C }
+  - { offsetInCU: 0x49A, offset: 0x49A, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x9F4, symBinAddr: 0x100003D94, symSize: 0x3C }
+...

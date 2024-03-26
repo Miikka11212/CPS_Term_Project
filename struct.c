@@ -92,7 +92,7 @@ int main(){
         }
     }
 
-    printf("%lf", data[1]);
+    printf("%lf", data[1].LandMaxTemperature);
 
 
 
