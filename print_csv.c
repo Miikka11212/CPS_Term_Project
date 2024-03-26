@@ -10,6 +10,7 @@ int main(void) {
     char buffer[1000];
     char *dt;
 
+
 //make file reader called temp
     FILE *temp = fopen("GlobalTemperatures.csv", "r");
     //error load
@@ -18,16 +19,22 @@ int main(void) {
         exit(-1);
     }
 //gets ONLY FIRST LINE
-    fgets(buffer, sizeof(buffer), temp);
-    //the first three tokens of the first line
-    dt = strtok(buffer,",");
-    printf("the first token is: %s \n ", dt);
+    while (!EOF){
+        for (int i = 0; i < 1000; i++){
+            fgets(buffer, sizeof(buffer), temp);
+            //the first three tokens of the first line
+            dt = strtok(buffer,",");
 
-    dt = strtok(NULL,",");
-    printf("the second token is: %s \n ", dt);
+    //        printf("the first token is: %s \n ", dt);
+
+            dt = strtok(NULL,",");
+    //        printf("the second token is: %s \n ", dt);
+            
+            dt = strtok(NULL,",");
+    //        printf("the third token is: %s \n ", dt);
+    }
+}
     
-    dt = strtok(NULL,",");
-    printf("the third token is: %s \n ", dt);
 
     //prints out whole csv file
     //while(fgets(buffer, sizeof(buffer), temp)){
@@ -36,6 +43,8 @@ int main(void) {
 
     int line = 0;
     
+    
+
     while(!feof(temp) && !ferror(temp)){
         if(fgets(data[line], 3200, temp) != NULL){
             line++;
