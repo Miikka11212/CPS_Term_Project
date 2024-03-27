@@ -2,9 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
-
-
 
 const char *FILENAME = "GlobalTemperatures.csv";
 const int DATE_COL = 0;
@@ -90,9 +87,8 @@ void getColumnValue(int row, int col, char* result) {
 
   fclose(data);
 }
-
 /**
-* Question 2 Begins
+* question 2
 */
 void question2() {
   int tempCounts[4] ={0, 0, 0, 0};
@@ -128,8 +124,8 @@ void question2() {
 }
 
 /**
- * Question 3 Begins
- */
+* question 3
+*/
 void question3() {
   int tempCounts[12];
   double tempSums[12];
@@ -185,16 +181,54 @@ void question3() {
   }
   printf("=============================\n");
 }
-
+/**
+* question 4
+*/
+void question4(void)
+{
+	int hotind=1, coldind=1, coldmonth, coldyear, hotmonth, hotyear;
+	double hot, cold, bufferi;
+	char buffer[50];
+	getColumnValue(1, 1, buffer);
+	if (buffer[0]!='\0')
+	{
+		bufferi=atof(buffer);
+		hot=bufferi;
+		cold=bufferi;
+	}
+	for (int i=2; i<rowsCount(); i++)
+	{
+		getColumnValue(i, 1, buffer);
+		if (buffer[0]!='\0')
+		{
+			bufferi=atof(buffer);
+			if (bufferi>hot)
+			{
+				hot=bufferi;
+				hotind=i;
+			}
+			if (bufferi<cold)
+			{
+				cold=bufferi;
+				coldind=i;
+			}
+		}
+	}
+	getColumnValue(hotind, 0, buffer);
+	hotmonth=getMonth(buffer);
+	hotyear=getYear(buffer);
+	getColumnValue(coldind, 0, buffer);
+	coldmonth=getMonth(buffer);
+	coldyear=getYear(buffer);
+	printf("the coldest month was %d/%d at %lf\nthe hotest month was %d/%d at %lf\n", coldmonth, coldyear, cold, hotmonth, hotyear, hot);
+}
 /**
 * Main
  */
 int main(void) {
-    chdir("/Users/miikka/Desktop/CPS/");
-
-
 
   question2();
   question3();
+  question4();
   return 0;
 }
