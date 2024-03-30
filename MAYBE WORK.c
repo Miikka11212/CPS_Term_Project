@@ -34,27 +34,26 @@ char* inquire(int x, int y) {
     return returnable;
 }
 
-int main(void) {
-    for (int ctr = 0; ctr < 24; ctr++) // change 24 to datenimer to determine an end point
-    {
-        printf("%s\n", inquire(ctr, 0)); // change ctr to datenumber to satrt at a certin point and 0 with to the index of the data wanted
-    }
-    return 0;
+int main(void) 
+{
+    
 
 
 
 //Question 1
 double sum =0;
-char avg_string[2015-1760];
-int pos = datenumber(1760,1);
-for (int i = 0; i < 2015-1760; i++)
+double avg_string[2016-1760];
+int pos = datenumber(1760,0);
+for (int i = 0; i < 2016-1760; i++)
 {
     sum = 0;
 
-    for (int n = 0; n < 12; n++)
-        sum+=strtod(inquire(pos,1));
+    for(int n = 0; n < 12; n++)
+    {
+        sum+=strtod(inquire(pos,1),NULL);
         pos+=1;
-    datenumber[i]= sum/12;
+	}
+    avg_string[i]= sum/12;
 
 
 }
@@ -63,7 +62,8 @@ for (int i = 0; i < 2015-1760; i++)
 int max =0;
 int min =0;
 int len = sizeof(avg_string)/sizeof(avg_string[0]);
-for (int n = 0; n < len; n++)
+for(int n = 0; n < len; n++)
+{
         if( avg_string[n]>avg_string[max])
         {
             max = n ;
@@ -73,18 +73,21 @@ for (int n = 0; n < len; n++)
         {
             min = n ;
         }
-
-printf("Hottest year is %d", 1760+max);
-printf("Coldest year is %d", 1760+min);
+}
+printf("Hottest year is %d\n", 1760+max);
+printf("Coldest year is %d\n", 1760+min);
 
 //question 6 
 int startyr = 1760 ;
-int len = sizeof(avg_string)/sizeof(avg_string[0]);
-File*q6;
+len = sizeof(avg_string)/sizeof(avg_string[0]);
+FILE*q6;
 q6 = fopen("Question6.txt", "w");
 for (int n = 0; n < len; n++)
 {
-    fprintf(q6,"%lf %lf\n",startyr+n,avg_string[n]);
+    fprintf(q6,"%d %lf\n",startyr+n,avg_string[n]);
+    //printf("%d %lf\n",startyr+n,avg_string[n]); // test line 
 }
 
 fclose(q6);
+return 0;
+}
