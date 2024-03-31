@@ -330,17 +330,19 @@ void question8()
 }
 
 void question9(void){
-
+  //not sure about bar plots
 }
 
 void question10(void){
   char temp[100];
+  char data[17];
   int rows = rowsCount();
   //printf ("%d", rows);
   double value = 0;
   FILE *q10 = fopen("gnu/q10.csv", "w");
 
   //fprintf(q10, "jan, feb, mar, apr, may, june, july, aug, sept, oct, noc, dec");
+  //fprintf(q10, "\n");
   //printf("%s", temp);
   for (int j = 0; j < 180; j ++){
     for (int i = 0; i < 12; i++){
@@ -353,42 +355,41 @@ void question10(void){
       fprintf(q10, "\n");
   }
   //here
-  q10 = fopen("gnu/q10.csv", "r");
-    char line[1024];
-    double sum = 0.0;
-    int count = 0;
+  getColumnValue(2, 1, data);
+  printf("%s", data);
 
-    // Read the first line (header) and discard it if needed
-    //fgets(line, 1024, q10);
+  char line[1024];
+  double sum = 0.0;
+  int count = 0;
+  FILE *file = fopen("gnu/q10.csv", "wr");
+  fgets(line, 1024, file);
 
-    // Read lines from the file
-    while (fgets(line, 1024, q10) != NULL) {
-        // Tokenize the line to extract the value from the first column
-        char *token = strtok(line, ",");
-        if (token != NULL) {
-            // Check if the token contains numeric characters
-            int valid = 1;
-            for (int i = 0; i < strlen(token); i++) {
-                if (!isdigit(token[i]) && token[i] != '.' && token[i] != '-') {
-                    valid = 0;
-                    break;
-                }
-            }
-            if (valid) {
-                // Convert the token to a double and add it to the sum
-                double value = atof(token);
-                sum += value;
-                count++;
-            }
-        }
-    }
+  // Read lines from the file
+  while (fgets(line, 1024, file) != NULL) {
+      // Tokenize the line to extract the value from the first column
+      char *token = strtok(line, ",");
+      if (token != NULL) {
+          // Convert the token to a double and add it to the sum
+          double value = atof(token);
+          sum += value;
+          count++;
+      }
+  }
 
-    // Close the file
-    fclose(q10);
+  // Close the file
+  fclose(file);
 
-    // Calculate the average
-    double average = (count > 0) ? (sum / count) : 0.0;
-    printf("Average of the first column: %.2f\n", average);
+  // Calculate and print the average for the first column
+  double average = (count > 0) ? (sum / count) : 0.0;
+  printf("Average of the first column: %.2f\n", average);
+
+  
+
+  
+
+
+
+  
 
 
  
@@ -398,6 +399,13 @@ void question10(void){
 
 }
 
+  //half done, need to find average and output
+
+void question11(void){
+
+}
+  //
+
 /**
 * Main
  */
@@ -406,7 +414,7 @@ int main(void) {
   //question2();
   //question3();
   //question4();
-  question10();
-
+  //question10();
+  question11();
   return 0;
 }
