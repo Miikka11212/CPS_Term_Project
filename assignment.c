@@ -88,8 +88,8 @@ void getColumnValue(int row, int col, char* result) {
   fclose(data);
 }
 /**
-* question 2
-*/
+ * question 2
+ */
 void question2() {
   int tempCounts[4] ={0, 0, 0, 0};
   double tempSums[4] = {0, 0, 0, 0};
@@ -122,10 +122,9 @@ void question2() {
   }
   printf("=============================\n");
 }
-
 /**
-* question 3
-*/
+ * question 3
+ */
 void question3() {
   int tempCounts[12];
   double tempSums[12];
@@ -182,8 +181,8 @@ void question3() {
   printf("=============================\n");
 }
 /**
-* question 4
-*/
+ * question 4
+ */
 void question4(void)
 {
 	int hotind=1, coldind=1, coldmonth, coldyear, hotmonth, hotyear;
@@ -223,6 +222,74 @@ void question4(void)
 	printf("the coldest month was %d/%d at %lf\nthe hotest month was %d/%d at %lf\n", coldmonth, coldyear, cold, hotmonth, hotyear, hot);
 }
 /**
+ * question 7
+ */
+void question7(void)
+{
+	double yr19avg, yr20avg, yr19sum, yr20sum;
+	int year=0, row19=601, row20=1801;
+	char buffer[50];
+	FILE *out;
+	out=fopen("question7.dat", "w");
+	for (int i=0; i<100; i++)
+	{
+		yr19sum=0;
+		yr20sum=0;
+		for (int j=0; j<12; j++)
+		{
+			getColumnValue(row19, 1, buffer);
+			yr19sum+=atof(buffer);
+			row19++;
+		}
+		for (int j=0; j<12; j++)
+		{
+			getColumnValue(row20, 1, buffer);
+			yr20sum+=atof(buffer);
+			row20++;
+		}
+		yr19avg=yr19sum/12.0;
+		yr20avg=yr20sum/12.0;
+		fprintf(out, "%d %lf %lf\n", year, yr19avg, yr20avg);
+		year++;
+	}
+	fclose(out);
+	printf("question7.dat created\n");
+}
+/**
+ * question 8
+ */
+void question8()
+{
+	double yrmidavg, yrmaxavg, yrminavg, yrmidsum, yrmaxsum, yrminsum;
+	int year=1850, row=1201;
+	char buffer[50];
+	FILE *out;
+	out=fopen("question8.dat", "w");
+	for (int i=0; i<=165; i++)
+	{
+		yrmidsum=0;
+		yrmaxsum=0;
+		yrminsum=0;
+		for (int j=0; j<12; j++)
+		{
+			getColumnValue(row, 1, buffer);
+			yrmidsum+=atof(buffer);
+			getColumnValue(row, 3, buffer);
+			yrmaxsum+=atof(buffer);
+			getColumnValue(row, 5, buffer);
+			yrminsum+=atof(buffer);
+			row++;
+		}
+		yrmidavg=yrmidsum/12.0;
+		yrmaxavg=yrmaxsum/12.0;
+		yrminavg=yrminsum/12.0;
+		fprintf(out, "%d %lf %lf %lf\n", year, yrmidavg, yrmaxavg, yrminavg);
+		year++;
+	}
+	fclose(out);
+	printf("question8.dat created\n");
+}
+/**
 * Main
  */
 int main(void) {
@@ -230,5 +297,7 @@ int main(void) {
   question2();
   question3();
   question4();
+  question7();
+  question8();
   return 0;
 }
