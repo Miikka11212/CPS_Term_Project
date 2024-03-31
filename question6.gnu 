@@ -1,0 +1,7 @@
+set title 'Yearly average temperatures from 1760-2015'
+set xlabel 'Years'
+set ylabel 'Temperature'
+set xtics (1760, 1810, 1860, 1910, 1960, 2010)
+set yrange [0:20]
+set ytics 2
+plot 'Question6.txt' using 1:2 title "Yearly Average Temp" with lines lw 4

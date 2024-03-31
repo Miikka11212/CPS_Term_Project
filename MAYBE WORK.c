@@ -81,7 +81,7 @@ printf("Coldest year is %d\n", 1760+min);
 int startyr = 1760 ;
 len = sizeof(avg_string)/sizeof(avg_string[0]);
 FILE*q6;
-q6 = fopen("Question6.txt", "w");
+q6 = fopen("Question6.dat", "w");
 for (int n = 0; n < len; n++)
 {
     fprintf(q6,"%d %lf\n",startyr+n,avg_string[n]);
