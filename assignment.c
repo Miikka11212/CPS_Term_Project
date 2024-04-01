@@ -330,7 +330,48 @@ void question8()
 }
 
 void question9(void){
-  //not sure about bar plots
+  FILE *q9 = fopen("gnu/q9.txt","w");
+
+	// Write the header line to the file
+	fprintf(q9,"# Century AverageLandTemp AverageMaxLandTemp AverageMinLandTemp\n");
+	int count = 0; 
+  int century = 0; 
+  double land_max_temp = 0;
+  double land_min_remp = 0;
+  int z = 0;
+  int n =0;
+  double year_average[255];
+  double land_max_tempa[1024];
+  double landmintempa[1024];
+
+	
+	// Loop through the years from 1850 to 2016
+	for (int i = 1850; i <= 1850+196; i++){
+		// If the current year is a century year or the year 2016
+		if  (i % 100 ==0 || i  == 2016){
+			
+			// Calculate the average temperature, max temperature, and min temperature for the century
+			century /= count;
+			land_max_temp /= count;
+			land_min_remp /=count;
+			
+			fprintf(q9,"%d %d-%d   %lf %lf %lf \n",z,i-count,i-1,century,land_max_temp,land_min_remp);
+
+			z++;
+			n++;
+
+			count= 0;
+			century = 0;
+			land_max_temp = 0;
+			land_min_remp = 0;
+		}
+		
+		century += year_average[i-1760] ;
+		land_max_temp += land_max_tempa[i-1850];
+		land_min_remp += landmintempa[i-1850];
+		count++;
+
+	}
 }
 
 void question10(void){
@@ -414,7 +455,8 @@ int main(void) {
   //question2();
   //question3();
   //question4();
+  question9();
   //question10();
-  question11();
+  //question11();
   return 0;
 }
