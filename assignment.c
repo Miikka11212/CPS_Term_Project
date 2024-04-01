@@ -443,6 +443,53 @@ void question10(void){
   //half done, need to find average and output
 
 void question11(void){
+  int startyr = 1760 ;
+  double avg_string[2015-1850];
+  double avg_stringtwo[2015-1850];
+  int sum;
+  int pos = datenumber(1850,0);
+  char taken[25];
+  char gaken[25];
+
+
+  for (int i = 0; i < 2016-1760; i++)
+{
+    sum = 0;
+
+    for(int n = 0; n < 12; n++)
+    { 
+        getColumnValue(pos,1, taken);
+        sum+=strtod(taken,NULL);
+        pos+=1;
+	}
+    avg_string[i]= sum/12;
+}
+
+  for (int i = 0; i < 2016-1760; i++)
+{
+    sum = 0;
+
+    for(int n = 0; n < 12; n++)
+    { 
+        getColumnValue(pos,9, gaken);
+        sum+=strtod(gaken,NULL);
+        pos+=1;
+	}
+    avg_stringtwo[i]= sum/12;
+}
+
+  int len = sizeof(avg_string)/sizeof(avg_string[0]);
+  
+  FILE *q11 = fopen("gnu/q11.txt", "w");
+  for (int n = 0; n < len; n++)
+  {
+    fprintf(q11,"%d %lf %lf\n", startyr+n, avg_string[n], avg_stringtwo[n]);
+    //printf("%d %lf\n",startyr+n,avg_string[n]); // test line 
+  }
+
+fclose(q11);
+
+
 
 }
   //
@@ -473,6 +520,7 @@ for (int i = 0; i < 2016-1760; i++)
   //question2();
   //question3();
   //question4();
+  question11();
 //question 5 
 /*
 int max =0;
@@ -507,7 +555,7 @@ for (int n = 0; n < len; n++)
 
 fclose(q6);
 */
-  question9();
+  //question9();
   //question10();
   //question11();
   return 0;
