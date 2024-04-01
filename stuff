@@ -512,4 +512,3 @@ fclose(q6);
   //question11();
   return 0;
 }
-
