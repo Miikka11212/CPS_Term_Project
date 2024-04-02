@@ -433,7 +433,7 @@ void question11(void){
   int startyr = 1850 ;
   double avg_string[2016-1850];
   double avg_stringtwo[2016-1850];
-  int sum;
+  double sum;
   int pos = datenumber(1850,1);
   char taken[25];
   char gaken[25];
@@ -451,19 +451,24 @@ void question11(void){
 	}
     avg_string[i]= sum/12;
 }
+//  printf("%lf", avg_string[1]);
+pos =  datenumber(1850,1);
 
-  for (int i = 0; i < 2016-1850; i++)
+for (int i = 0; i < 2016-1850; i++)
 {
     sum = 0;
 
     for(int n = 0; n < 12; n++)
     { 
-        getColumnValue(pos,8, gaken);
+        getColumnValue(pos,7, gaken);
         sum+=strtod(gaken,NULL);
         pos+=1;
 	}
     avg_stringtwo[i]= sum/12;
 }
+  printf("%lf", avg_stringtwo[1]);
+
+
 
   int len = sizeof(avg_string)/sizeof(avg_string[0]);
   
@@ -563,7 +568,7 @@ int main(void) {
   
   //question9();
   //question10();
-  //question11();
+  question11();
   return 0;
 }
 
