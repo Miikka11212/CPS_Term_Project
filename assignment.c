@@ -424,19 +424,6 @@ void question10(void){
   double average = (count > 0) ? (sum / count) : 0.0;
   printf("Average of the first column: %.2f\n", average);
 
-  
-
-  
-
-
-
-  
-
-
- 
-    
-
-
 
 }
 
@@ -491,21 +478,18 @@ fclose(q11);
 
 
 
-}
-  //
 
-/**
-* Main
- */
-int main(void) {
-  //Question 1
-  /*
-double sum =0;
-double avg_string[2016-1760];
-int pos = datenumber(1760,0);
-char taken[25];
-for (int i = 0; i < 2016-1760; i++)
-{
+}
+
+void question1256(void){
+    //Question 1
+  
+  double sum =0;
+  double avg_string[2016-1760];
+  int pos = datenumber(1760,0);
+  char taken[25];
+  for (int i = 0; i < 2016-1760; i++)
+  {
     sum = 0;
 
     for(int n = 0; n < 12; n++)
@@ -513,48 +497,59 @@ for (int i = 0; i < 2016-1760; i++)
         getColumnValue(pos,1, taken);
         sum+=strtod(taken,NULL);
         pos+=1;
-	}
-    avg_string[i]= sum/12;
-    */
+	  }
+  avg_string[i]= sum/12;
+    
+   //question 5 
+
+  int max =0;
+  int min =0;
+  int len = sizeof(avg_string)/sizeof(avg_string[0]);
+  for(int n = 0; n < len; n++)
+  {
+    if( avg_string[n]>avg_string[max])
+    {
+      max = n ;
+    }
+
+    if( avg_string[n]<avg_string[min])
+    {
+      min = n ;
+    }
+  }
+    printf("Hottest year is %d\n", 1760+max);
+    printf("Coldest year is %d\n", 1760+min);
+    
+    //question 6 
+    
+    int startyr = 1760 ;
+    len = sizeof(avg_string)/sizeof(avg_string[0]);
+    FILE*q6;
+    q6 = fopen("Question6.txt", "w");
+    for (int n = 0; n < len; n++)
+    {
+        fprintf(q6,"%d %lf\n",startyr+n,avg_string[n]);
+        //printf("%d %lf\n",startyr+n,avg_string[n]); // test line 
+    }
+
+    fclose(q6);
+    
+}
+}
+  //
+
+/**
+* Main
+ */
+
+
+int main(void) {
+
   chdir("/Users/miikka/Desktop/CPS/");
   //question2();
   //question3();
   //question4();
-  question11();
-//question 5 
-/*
-int max =0;
-int min =0;
-int len = sizeof(avg_string)/sizeof(avg_string[0]);
-for(int n = 0; n < len; n++)
-{
-        if( avg_string[n]>avg_string[max])
-        {
-            max = n ;
-        }
-
-        if( avg_string[n]<avg_string[min])
-        {
-            min = n ;
-        }
-}
-printf("Hottest year is %d\n", 1760+max);
-printf("Coldest year is %d\n", 1760+min);
-*/
-//question 6 
-/* 
-int startyr = 1760 ;
-len = sizeof(avg_string)/sizeof(avg_string[0]);
-FILE*q6;
-q6 = fopen("Question6.txt", "w");
-for (int n = 0; n < len; n++)
-{
-    fprintf(q6,"%d %lf\n",startyr+n,avg_string[n]);
-    //printf("%d %lf\n",startyr+n,avg_string[n]); // test line 
-}
-
-fclose(q6);
-*/
+  question1256();
   //question9();
   //question10();
   //question11();
