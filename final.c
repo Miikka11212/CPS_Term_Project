@@ -375,54 +375,28 @@ void question9(void){
 }
 
 void question10(void){
-  char temp[100];
-  char data[17];
-  int rows = rowsCount();
-  //printf ("%d", rows);
-  double value = 0;
-  FILE *q10 = fopen("gnu/q10.csv", "w");
+        FILE*q10;
+    q10 = fopen("q10.txt", "w");
+    char temp[25];
+    char temptwo[25];
+    double temp_double=0;
+    double temp_double_two = 0;
+    double increment = 2000;
 
-  //fprintf(q10, "jan, feb, mar, apr, may, june, july, aug, sept, oct, noc, dec");
-  //fprintf(q10, "\n");
-  //printf("%s", temp);
-  for (int j = 0; j < 180; j ++){
-    for (int i = 0; i < 12; i++){
-      getColumnValue(i + j + 3001, 1, temp); 
-      fprintf(q10, temp);
-      //printf("%s \n", temp);
-      fprintf(q10, ", ");
+    for (int i = datenumber(2000,1); i < datenumber(2000,1)+(15*12); i++)
+    {
+        getColumnValue(i,1,temp);
+        getColumnValue(i,2,temptwo);
+        temp_double = strtod(temp,NULL);
+        temp_double_two = strtod(temptwo,NULL);
+        fprintf(q10, "%lf %lf %lf \n", increment,temp_double,temp_double_two );
+        increment += 0.08333333333;
+        printf("%f \n", increment);
     }
-    j += 11;
-      fprintf(q10, "\n");
-  }
-  //here
-  getColumnValue(2, 1, data);
-  printf("%s", data);
+    
+    fclose(q10);
 
-  char line[1024];
-  double sum = 0.0;
-  int count = 0;
-  FILE *file = fopen("gnu/q10.csv", "wr");
-  fgets(line, 1024, file);
 
-  // Read lines from the file
-  while (fgets(line, 1024, file) != NULL) {
-      // Tokenize the line to extract the value from the first column
-      char *token = strtok(line, ",");
-      if (token != NULL) {
-          // Convert the token to a double and add it to the sum
-          double value = atof(token);
-          sum += value;
-          count++;
-      }
-  }
-
-  // Close the file
-  fclose(file);
-
-  // Calculate and print the average for the first column
-  double average = (count > 0) ? (sum / count) : 0.0;
-  printf("Average of the first column: %.2f\n", average);
 
 
 }
@@ -565,7 +539,7 @@ void question1256(void){
 int main(void) {
   chdir("/Users/miikka/Desktop/CPS/");
 
-  question1256();
+  //question1256();
   
   //question2();
   //question3();
@@ -573,8 +547,8 @@ int main(void) {
 
   
   //question9();
-  //question10();
-  question11();
+  question10();
+  //question11();
   return 0;
 }
 

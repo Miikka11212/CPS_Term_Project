@@ -1,0 +1,32 @@
+
+char temp[100];
+  char data[17];
+  int rows = rowsCount();
+  //printf ("%d", rows);
+  double value = 0;
+  FILE *q10 = fopen("gnu/q10.csv", "w");
+
+  //fprintf(q10, "jan, feb, mar, apr, may, june, july, aug, sept, oct, noc, dec");
+  //fprintf(q10, "\n");
+  //printf("%s", temp);
+  for (int j = 0; j < 180; j ++){
+    for (int i = 0; i < 12; i++){
+      getColumnValue(i + j + 3001, 1, temp); 
+      fprintf(q10, temp);
+      //printf("%s \n", temp);
+      fprintf(q10, " ");
+    }
+    j += 11;
+      fprintf(q10, "\n");
+  }
+  //here
+  getColumnValue(2, 1, data);
+  printf("%s", data);
+
+  char line[1024];
+  double sum = 0.0;
+  int count = 0;
+  FILE *file = fopen("gnu/q10.txt", "wr");
+  fgets(line, 1024, file);
+
+  
