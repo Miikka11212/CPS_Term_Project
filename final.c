@@ -490,11 +490,14 @@ void question1256(void){
     
     
     //Question 1
-  
+  printf("\n\n       Question 1\n");
+  printf("=============================\n");
   double sum =0;
   double avg_string[2016-1760];
   int pos = datenumber(1760,1);
   char taken[100];
+  printf("Year     LandAverageTemperature\n");
+  printf("-------------------------------\n");
   for (int i = 0; i < 2016-1760; i++)
   {
     sum = 0;
@@ -508,8 +511,11 @@ void question1256(void){
         pos+=1;
 	  }
   avg_string[i]= sum/12;
+  printf("%d:    %lf\n ", 1760+i, avg_string[i]);
+  
   }
     
+  printf("=============================\n");
    //question 5 
 
   int max =0;
