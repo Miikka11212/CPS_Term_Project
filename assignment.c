@@ -451,6 +451,19 @@ void question10(void){
   double average = (count > 0) ? (sum / count) : 0.0;
   printf("Average of the first column: %.2f\n", average);
 
+  
+
+  
+
+
+
+  
+
+
+ 
+    
+
+
 
 }
 
@@ -504,6 +517,7 @@ void question11(void){
   }
 
 fclose(q11);
+
 
 
 
@@ -567,25 +581,19 @@ void question1256(void){
     
 }
 }
-  //
 
 /**
 * Main
  */
-
-=======
-
-}
-
-void question1256(void){
-    //Question 1
-  
-  double sum =0;
-  double avg_string[2016-1760];
-  int pos = datenumber(1760,0);
-  char taken[25];
-  for (int i = 0; i < 2016-1760; i++)
-  {
+int main(void) {
+  //Question 1
+  /*
+double sum =0;
+double avg_string[2016-1760];
+int pos = datenumber(1760,0);
+char taken[25];
+for (int i = 0; i < 2016-1760; i++)
+{
     sum = 0;
 
     for(int n = 0; n < 12; n++)
@@ -628,25 +636,8 @@ void question1256(void){
         //printf("%d %lf\n",startyr+n,avg_string[n]); // test line 
     }
 
-    fclose(q6);
-    
-}
-}
-  //
-
-/**
-* Main
- */
-
->>>>>>> e1fbea1a4e5c41a3d3fc9a9430a336071b669546
-
-int main(void) {
-
-  chdir("/Users/miikka/Desktop/CPS/");
-  //question2();
-  //question3();
-  //question4();
-  question1256();
+fclose(q6);
+*/
   //question9();
   //question10();
   //question11();
