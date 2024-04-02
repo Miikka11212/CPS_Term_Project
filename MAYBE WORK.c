@@ -7,7 +7,8 @@ int datenumber(int year, int month) {
     return 12 * (year - 1750) + month;
 }
 
-char* inquire(int x, int y) {
+char* inquire(int x, int y)
+ {
     FILE *data;
     char wanted[1000];
     static char returnable[100]; 
@@ -81,7 +82,7 @@ printf("Coldest year is %d\n", 1760+min);
 int startyr = 1760 ;
 len = sizeof(avg_string)/sizeof(avg_string[0]);
 FILE*q6;
-q6 = fopen("Question6.dat", "w");
+q6 = fopen("Question6.txt", "w");
 for (int n = 0; n < len; n++)
 {
     fprintf(q6,"%d %lf\n",startyr+n,avg_string[n]);
