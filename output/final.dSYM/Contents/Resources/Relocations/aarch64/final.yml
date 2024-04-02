@@ -2,24 +2,24 @@
 triple:          'arm64-apple-darwin'
 binary-path:     '/Users/miikka/Desktop/CPS/output/final'
 relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _datenumber, symObjAddr: 0x0, symBinAddr: 0x100001FBC, symSize: 0x2C }
-  - { offsetInCU: 0x4D, offset: 0x4D, size: 0x8, addend: 0x0, symName: _FILENAME, symObjAddr: 0x1F18, symBinAddr: 0x100008000, symSize: 0x0 }
-  - { offsetInCU: 0x6C, offset: 0x6C, size: 0x8, addend: 0x0, symName: _DATE_COL, symObjAddr: 0x1F20, symBinAddr: 0x100003C50, symSize: 0x0 }
-  - { offsetInCU: 0x8D, offset: 0x8D, size: 0x8, addend: 0x0, symName: _AVG_TEMP_COL, symObjAddr: 0x1F24, symBinAddr: 0x100003C54, symSize: 0x0 }
-  - { offsetInCU: 0xA2, offset: 0xA2, size: 0x8, addend: 0x0, symName: _AVG_TEMP_UNC_COL, symObjAddr: 0x1F28, symBinAddr: 0x100003C58, symSize: 0x0 }
-  - { offsetInCU: 0xC4, offset: 0xC4, size: 0x8, addend: 0x0, symName: _datenumber, symObjAddr: 0x0, symBinAddr: 0x100001FBC, symSize: 0x2C }
-  - { offsetInCU: 0xFA, offset: 0xFA, size: 0x8, addend: 0x0, symName: _getMonth, symObjAddr: 0x2C, symBinAddr: 0x100001FE8, symSize: 0xF4 }
-  - { offsetInCU: 0x167, offset: 0x167, size: 0x8, addend: 0x0, symName: _getYear, symObjAddr: 0x120, symBinAddr: 0x1000020DC, symSize: 0xE0 }
-  - { offsetInCU: 0x1C6, offset: 0x1C6, size: 0x8, addend: 0x0, symName: _rowsCount, symObjAddr: 0x200, symBinAddr: 0x1000021BC, symSize: 0xE0 }
-  - { offsetInCU: 0x20A, offset: 0x20A, size: 0x8, addend: 0x0, symName: _getColumnValue, symObjAddr: 0x2E0, symBinAddr: 0x10000229C, symSize: 0x190 }
-  - { offsetInCU: 0x2AC, offset: 0x2AC, size: 0x8, addend: 0x0, symName: _question2, symObjAddr: 0x470, symBinAddr: 0x10000242C, symSize: 0x208 }
-  - { offsetInCU: 0x3A7, offset: 0x3A7, size: 0x8, addend: 0x0, symName: _question3, symObjAddr: 0x678, symBinAddr: 0x100002634, symSize: 0x34C }
-  - { offsetInCU: 0x4A6, offset: 0x4A6, size: 0x8, addend: 0x0, symName: _question4, symObjAddr: 0x9F4, symBinAddr: 0x1000029B0, symSize: 0x214 }
-  - { offsetInCU: 0x56D, offset: 0x56D, size: 0x8, addend: 0x0, symName: _question7, symObjAddr: 0xC08, symBinAddr: 0x100002BC4, symSize: 0x1F0 }
-  - { offsetInCU: 0x65C, offset: 0x65C, size: 0x8, addend: 0x0, symName: _question8, symObjAddr: 0xDF8, symBinAddr: 0x100002DB4, symSize: 0x3A4 }
-  - { offsetInCU: 0x847, offset: 0x847, size: 0x8, addend: 0x0, symName: _question9, symObjAddr: 0x119C, symBinAddr: 0x100003158, symSize: 0x26C }
-  - { offsetInCU: 0x91A, offset: 0x91A, size: 0x8, addend: 0x0, symName: _question10, symObjAddr: 0x1408, symBinAddr: 0x1000033C4, symSize: 0x17C }
-  - { offsetInCU: 0x9AC, offset: 0x9AC, size: 0x8, addend: 0x0, symName: _question11, symObjAddr: 0x1584, symBinAddr: 0x100003540, symSize: 0x2AC }
-  - { offsetInCU: 0xAE7, offset: 0xAE7, size: 0x8, addend: 0x0, symName: _question1256, symObjAddr: 0x1830, symBinAddr: 0x1000037EC, symSize: 0x374 }
-  - { offsetInCU: 0xC05, offset: 0xC05, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x1BA4, symBinAddr: 0x100003B60, symSize: 0x38 }
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _datenumber, symObjAddr: 0x0, symBinAddr: 0x100002024, symSize: 0x2C }
+  - { offsetInCU: 0x4D, offset: 0x4D, size: 0x8, addend: 0x0, symName: _FILENAME, symObjAddr: 0x1EB0, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x6C, offset: 0x6C, size: 0x8, addend: 0x0, symName: _DATE_COL, symObjAddr: 0x1EB8, symBinAddr: 0x100003CA0, symSize: 0x0 }
+  - { offsetInCU: 0x8D, offset: 0x8D, size: 0x8, addend: 0x0, symName: _AVG_TEMP_COL, symObjAddr: 0x1EBC, symBinAddr: 0x100003CA4, symSize: 0x0 }
+  - { offsetInCU: 0xA2, offset: 0xA2, size: 0x8, addend: 0x0, symName: _AVG_TEMP_UNC_COL, symObjAddr: 0x1EC0, symBinAddr: 0x100003CA8, symSize: 0x0 }
+  - { offsetInCU: 0xC4, offset: 0xC4, size: 0x8, addend: 0x0, symName: _datenumber, symObjAddr: 0x0, symBinAddr: 0x100002024, symSize: 0x2C }
+  - { offsetInCU: 0xFA, offset: 0xFA, size: 0x8, addend: 0x0, symName: _getMonth, symObjAddr: 0x2C, symBinAddr: 0x100002050, symSize: 0xF4 }
+  - { offsetInCU: 0x167, offset: 0x167, size: 0x8, addend: 0x0, symName: _getYear, symObjAddr: 0x120, symBinAddr: 0x100002144, symSize: 0xE0 }
+  - { offsetInCU: 0x1C6, offset: 0x1C6, size: 0x8, addend: 0x0, symName: _rowsCount, symObjAddr: 0x200, symBinAddr: 0x100002224, symSize: 0xE0 }
+  - { offsetInCU: 0x20A, offset: 0x20A, size: 0x8, addend: 0x0, symName: _getColumnValue, symObjAddr: 0x2E0, symBinAddr: 0x100002304, symSize: 0x190 }
+  - { offsetInCU: 0x2AC, offset: 0x2AC, size: 0x8, addend: 0x0, symName: _question2, symObjAddr: 0x470, symBinAddr: 0x100002494, symSize: 0x208 }
+  - { offsetInCU: 0x3A7, offset: 0x3A7, size: 0x8, addend: 0x0, symName: _question3, symObjAddr: 0x678, symBinAddr: 0x10000269C, symSize: 0x34C }
+  - { offsetInCU: 0x4A6, offset: 0x4A6, size: 0x8, addend: 0x0, symName: _question4, symObjAddr: 0x9F4, symBinAddr: 0x100002A18, symSize: 0x238 }
+  - { offsetInCU: 0x56D, offset: 0x56D, size: 0x8, addend: 0x0, symName: _question7, symObjAddr: 0xC2C, symBinAddr: 0x100002C50, symSize: 0x1E4 }
+  - { offsetInCU: 0x65C, offset: 0x65C, size: 0x8, addend: 0x0, symName: _question8, symObjAddr: 0xE10, symBinAddr: 0x100002E34, symSize: 0x1E0 }
+  - { offsetInCU: 0x749, offset: 0x749, size: 0x8, addend: 0x0, symName: _question9, symObjAddr: 0xFF0, symBinAddr: 0x100003014, symSize: 0x40C }
+  - { offsetInCU: 0x864, offset: 0x864, size: 0x8, addend: 0x0, symName: _question10, symObjAddr: 0x13FC, symBinAddr: 0x100003420, symSize: 0x164 }
+  - { offsetInCU: 0x8F6, offset: 0x8F6, size: 0x8, addend: 0x0, symName: _question11, symObjAddr: 0x1560, symBinAddr: 0x100003584, symSize: 0x2AC }
+  - { offsetInCU: 0xA31, offset: 0xA31, size: 0x8, addend: 0x0, symName: _question1256, symObjAddr: 0x180C, symBinAddr: 0x100003830, symSize: 0x374 }
+  - { offsetInCU: 0xB4F, offset: 0xB4F, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x1B80, symBinAddr: 0x100003BA4, symSize: 0x34 }
 ...

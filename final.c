@@ -226,8 +226,12 @@ void question4(void)
 	getColumnValue(coldind, 0, buffer);
 	coldmonth=getMonth(buffer);
 	coldyear=getYear(buffer);
+    printf("\n\n       Question 4\n");
+    printf("=============================\n");
 	printf("the coldest month was %d/%d at %lf\nthe hotest month was %d/%d at %lf\n", coldmonth, coldyear, cold, hotmonth, hotyear, hot);
+    printf("=============================\n");
 }
+
 
 /**
  * question 7
@@ -260,7 +264,7 @@ void question7(void){
 		year++;
 	}
 	fclose(out);
-	printf("question7.dat created\n");
+
 }
 
 /**
@@ -295,88 +299,84 @@ void question8()
 		year++;
 	}
 	fclose(out);
-	printf("question8.dat created\n");
 
-{
-	double yr19avg, yr20avg, yr19sum, yr20sum;
-	int year=0, row19=601, row20=1801;
-	char buffer[50];
-	FILE *out;
-	out=fopen("question7.dat", "w");
-	for (int i=0; i<100; i++)
-	{
-		yr19sum=0;
-		yr20sum=0;
-		for (int j=0; j<12; j++)
-		{
-			getColumnValue(row19, 1, buffer);
-			yr19sum+=atof(buffer);
-			row19++;
-		}
-		for (int j=0; j<12; j++)
-		{
-			getColumnValue(row20, 1, buffer);
-			yr20sum+=atof(buffer);
-			row20++;
-		}
-		yr19avg=yr19sum/12.0;
-		yr20avg=yr20sum/12.0;
-		fprintf(out, "%d %lf %lf\n", year, yr19avg, yr20avg);
-		year++;
-	}
-	fclose(out);
-	printf("question7.dat created\n");
-}
+
+
 }
 
 void question9(void){
-  FILE *q9 = fopen("gnu/q9.txt","w");
+  FILE *q9 = fopen("q9.dat","w");
+    double sum1, sum2, sum3 = 0;
+    double avg1, avg2, avg3 = 0;
+    char buffer[25];
+    int rows19 = datenumber(1850, 1);
+    int rows20 = datenumber(1900, 1);
+    int rows21 = datenumber(2000, 1);
 
-	// Write the header line to the file
-	fprintf(q9,"# Century AverageLandTemp AverageMaxLandTemp AverageMinLandTemp\n");
-	int count = 0; 
-  int century = 0; 
-  double land_max_temp = 0;
-  double land_min_remp = 0;
-  int z = 0;
-  int n =0;
-  double year_average[255];
-  double land_max_tempa[1024];
-  double landmintempa[1024];
+    for (int i = 0; i < 600; i ++){
+        getColumnValue(rows19, 1, buffer);
+        sum1+=atof(buffer);
+        getColumnValue(rows19, 3, buffer);
+        sum2+=atof(buffer);
+        getColumnValue(rows19, 5, buffer);
+        sum3+=atof(buffer);
+        rows19++;
+    }
+
+    avg1 = sum1 / 600.0;
+    avg2 = sum2 / 600.0;
+    avg3 = sum3 / 600.0;
+
+    fprintf(q9, "19 %lf %lf %lf", avg1, avg2, avg3);
+
+    sum1 = 0; sum2 = 0; sum3 = 0;
+    avg1 = 0; avg2 = 0; avg3 = 0;
+
+    for (int i = 0; i < 1200; i ++){
+        getColumnValue(rows20, 1, buffer);
+        sum1+=atof(buffer);
+        getColumnValue(rows20, 3, buffer);
+        sum2+=atof(buffer);
+        getColumnValue(rows20, 5, buffer);
+        sum3+=atof(buffer);
+        rows20++;
+    }
+
+    avg1 = sum1 / 1200.0;
+    avg2 = sum2 / 1200.0;
+    avg3 = sum3 / 1200.0;
+
+    fprintf(q9, "20 %lf %lf %lf", avg1, avg2, avg3);
+
+    sum1 = 0; sum2 = 0; sum3 = 0;
+    avg1 = 0; avg2 = 0; avg3 = 0;
+
+    for (int i = 0; i < 1200; i ++){
+        getColumnValue(rows21, 1, buffer);
+        sum1+=atof(buffer);
+        getColumnValue(rows21, 3, buffer);
+        sum2+=atof(buffer);
+        getColumnValue(rows21, 5, buffer);
+        sum3+=atof(buffer);
+        rows20++;
+
+    }
+
+    avg1 = sum1 / 1200.0;
+    avg2 = sum2 / 1200.0;
+    avg3 = sum3 / 1200.0;
+
+    fprintf(q9, "21 %lf %lf %lf", avg1, avg2, avg3);
+
+
+
 
 	
-	// Loop through the years from 1850 to 2016
-	for (int i = 1850; i <= 1850+196; i++){
-		// If the current year is a century year or the year 2016
-		if  (i % 100 ==0 || i  == 2016){
-			
-			// Calculate the average temperature, max temperature, and min temperature for the century
-			century /= count;
-			land_max_temp /= count;
-			land_min_remp /=count;
-			
-			fprintf(q9,"%d %d-%d   %lf %lf %lf \n",z,i-count,i-1,century,land_max_temp,land_min_remp);
-
-			z++;
-			n++;
-
-			count= 0;
-			century = 0;
-			land_max_temp = 0;
-			land_min_remp = 0;
-		}
-		
-		century += year_average[i-1760] ;
-		land_max_temp += land_max_tempa[i-1850];
-		land_min_remp += landmintempa[i-1850];
-		count++;
-
-	}
 }
 
 void question10(void){
         FILE*q10;
-    q10 = fopen("q10.txt", "w");
+    q10 = fopen("gnu/q10.dat", "w");
     char temp[25];
     char temptwo[25];
     double temp_double=0;
@@ -389,9 +389,9 @@ void question10(void){
         getColumnValue(i,2,temptwo);
         temp_double = strtod(temp,NULL);
         temp_double_two = strtod(temptwo,NULL);
-        fprintf(q10, "%lf %lf %lf \n", increment,temp_double,temp_double_two );
+        fprintf(q10, "%lf %lf %lf \n", increment,temp_double,temp_double_two);
         increment += 0.08333333333;
-        printf("%f \n", increment);
+        //printf("%f \n", increment);
     }
     
     fclose(q10);
@@ -518,7 +518,7 @@ void question1256(void){
     int startyr = 1760 ;
     len = sizeof(avg_string)/sizeof(avg_string[0]);
     FILE*q6;
-    q6 = fopen("Question6.txt", "w");
+    q6 = fopen("Question6.dat", "w");
     for (int n = 0; n < len; n++)
     {
         fprintf(q6,"%d %lf\n",startyr+n,avg_string[n]);
@@ -547,7 +547,7 @@ int main(void) {
 
   
   //question9();
-  question10();
+  //question10();
   //question11();
   return 0;
 }
