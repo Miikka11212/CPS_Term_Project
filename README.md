@@ -1,6 +1,6 @@
 # CPS Term Project: Global Temperature Analysis
 
-Miikka11212's C course project for analyzing monthly records in `GlobalTemperatures.csv`. The original `final.c` functions and `main()` structure are preserved.
+C course project for analyzing monthly records in `GlobalTemperatures.csv`. The original `final.c` functions and `main()` structure are preserved.
 
 ## Files
 
@@ -56,4 +56,4 @@ This repository preserves the original coursework implementation. Calculations r
 
 Superseded source experiments, compiled binaries, debugger bundles, machine-specific editor settings, scratch files, and unused generated data were removed. Previous files remain recoverable from Git history. `.gitignore` excludes build artifacts and generated `.dat` files. The trailing space in the question 6 script filename was removed to support Windows checkout; script contents are unchanged.
 
-Author: Miikka11212. Educational CPS course term project.
+Educational CPS course term project.
