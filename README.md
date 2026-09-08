@@ -1,66 +1,59 @@
-# 🌍 CPS Term Project: Global Temperature Data Analysis
+# CPS Term Project: Global Temperature Analysis
 
-This project analyzes historical global temperature data using a C program. It reads a CSV file containing temperature records from various regions of the Earth and answers a series of structured climate-related questions based on a course lab manual.
+Miikka11212's C course project for analyzing monthly records in `GlobalTemperatures.csv`. The original `final.c` functions and `main()` structure are preserved.
 
-## 📁 Features
+## Files
 
-- Parses and processes global temperature data from CSV files
-- Answers climate-related questions using basic data analysis
-- Generates result outputs as text files and gnuplot-compatible scripts
-- Modular C code structure for different parts of the analysis
+| File | Purpose |
+| --- | --- |
+| `final.c` | Original analysis functions for questions 1–11 |
+| `GlobalTemperatures.csv` | Monthly input data, 1750–2015 |
+| `question6.gnu`, `question7.gnu`, `question8.gnu` | Annual-temperature plotting scripts |
+| `q11.gnu`, `q11.txt` | Land / combined land-and-ocean plot and saved data |
+| `gnu/q9.gnu`, `gnu/2q9.txt` | Century comparison plot and saved data |
 
-## 🧰 Tech Stack
+## Build and run
 
-- C Programming Language
-- Gnuplot (for data visualization)
-- Standard C Libraries (`stdio.h`, `stdlib.h`, etc.)
+Use GCC on Linux/macOS or a compatible MinGW environment on Windows. The original source uses `unistd.h` and `chdir`.
 
-## 📂 Project Structure
-
-```
-CPS_Term_Project/
-├── GlobalTemperatures.csv      # Input dataset
-├── final.c                     # Main logic for solving questions
-├── print_csv.c                 # CSV parsing and output formatting
-├── questionX.gnu / qX.txt      # Gnuplot scripts and result files for each question
-├── MAYBE_WORK.c / assignment.c # Alternate versions of analysis code
-├── output/                     # Directory for output results
-├── stuff/, temp/               # Additional utility folders
-└── README.md                   # This file
+```sh
+gcc final.c -o final
+./final
 ```
 
-## 🚀 How to Run
+On Windows, compile with `gcc final.c -o final.exe` and run `.\final.exe`.
 
-1. **Compile the code** (example for `final.c`):
-   ```bash
-   gcc final.c -o final
-   ```
+The original `main()` currently has all analysis calls commented out, so the program produces no analysis as committed. To run a question, enable the relevant function call and update or remove `chdir("/Users/miikka/Desktop/CPS/")` to match the dataset location.
 
-2. **Run the executable**:
-   ```bash
-   ./final
-   ```
+- `question1256()` handles annual averages, hottest/coldest years, and question 6 data.
+- `question2()` computes century averages.
+- `question3()` computes monthly averages for 1900–2015.
+- `question4()` finds the hottest and coldest months.
+- `question7()` through `question11()` write data for the corresponding plots.
 
-3. **View the output**:
-   - Check the generated `.txt` or `.gnu` files
-   - Use `gnuplot` to visualize results:
-     ```bash
-     gnuplot q11.gnu
-     ```
+## Plotting
 
-## 📊 Sample Output
+Gnuplot is optional. After generating matching data, run a script from the repository root:
 
-Outputs include statistical data and trends extracted from the global temperature dataset, formatted as text and plotted graphs.
+```sh
+gnuplot -persist question7.gnu
+gnuplot -persist q11.gnu
+```
 
-## 📌 Notes
+Some original output filenames differ from the script inputs:
 
-- Ensure you have `gnuplot` installed for visualizations.
-- The input CSV file must be named `GlobalTemperatures.csv` and be in the root directory.
+- Question 6 writes `Question6.dat`; its plot reads `Question6.txt`.
+- Question 9 writes `q9.dat`; its plot reads `q9.txt`. Saved reference data is `gnu/2q9.txt`.
+- Question 11 writes `gnu/q11.txt`; its plot reads root `q11.txt`.
 
-## 🧑‍💻 Author
+Align those filenames when running the relevant plot. Saved data is historical output, not a newly verified result. The question 11 series labeled ocean is actually the combined land-and-ocean temperature.
 
-Miikka11212
+## Project status
 
----
+This repository preserves the original coursework implementation. Calculations remain unverified, including missing CSV-value handling and question 9 accumulation/iteration issues. The assignment specification and the dataset's original source/license were not recorded in the repository.
 
-For educational use as part of the CPS course term project.
+## Cleanup
+
+Superseded source experiments, compiled binaries, debugger bundles, machine-specific editor settings, scratch files, and unused generated data were removed. Previous files remain recoverable from Git history. `.gitignore` excludes build artifacts and generated `.dat` files. The trailing space in the question 6 script filename was removed to support Windows checkout; script contents are unchanged.
+
+Author: Miikka11212. Educational CPS course term project.
